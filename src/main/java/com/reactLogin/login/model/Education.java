@@ -25,12 +25,22 @@ public class Education {
     private String from;
     @Column(name="endDate")
     private String to;
+    private Boolean currentEdu;
     private String description;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="profile_id", nullable = false)
     @JsonIgnore
     private Profile profile;
+
+
+    public Boolean getCurrentEdu() {
+        return currentEdu;
+    }
+
+    public void setCurrentEdu(Boolean currentEdu) {
+        this.currentEdu = currentEdu;
+    }
 
     public Long getId() {
         return id;

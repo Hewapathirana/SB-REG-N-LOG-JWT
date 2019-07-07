@@ -17,6 +17,15 @@ public class UserService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+
+
+
+
+    public void deleteAccount(String userName) {
+        User user = userRepository.findByUsername(userName);
+        userRepository.delete(user);
+    }
+
     public User saveUser (User newUser){
         try{
             newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));

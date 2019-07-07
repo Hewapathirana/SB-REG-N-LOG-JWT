@@ -52,6 +52,9 @@ public class ProfileService {
     public Profile findByuser(String name) {
         User user = userRepository.findByUsername(name);
         Profile profile = profileRepository.findByUser(user);
+
+        System.out.println("profile" + profile);
+
         return profile;
     }
 

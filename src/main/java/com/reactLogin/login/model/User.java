@@ -45,7 +45,7 @@ public class User implements UserDetails {
     @Transient
     private String confirmPassword;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, orphanRemoval = true, mappedBy = "user")
     @JsonIgnore
     private Profile profile;
 

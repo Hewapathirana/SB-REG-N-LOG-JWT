@@ -1,13 +1,28 @@
 package com.reactLogin.login.payload;
 
+import javax.validation.constraints.NotBlank;
+
 public class ExprieneceRequest {
 
+
+    @NotBlank(message = "company cannot be blank")
     private String company;
     private String title;
     private String location;
+    @NotBlank(message = "from cannot be blank")
     private String from;
     private String to;
+    private Boolean currentJob;
     private String description;
+
+
+    public Boolean getCurrentJob() {
+        return currentJob;
+    }
+
+    public void setCurrentJob(Boolean currentJob) {
+        this.currentJob = currentJob;
+    }
 
     public String getCompany() {
         return company;

@@ -1,13 +1,31 @@
 package com.reactLogin.login.payload;
 
+import javax.validation.constraints.NotBlank;
+
 public class EducationRequest {
 
+
+    @NotBlank(message = "school cannot be blank")
     private String school;
     private String degree;
     private String fieldofstudy;
+    @NotBlank(message = "from cannot be blank")
     private String from;
     private String to;
+    private Boolean currentEdu;
     private String description;
+
+
+
+
+
+    public Boolean getCurrentEdu() {
+        return currentEdu;
+    }
+
+    public void setCurrentEdu(Boolean currentEdu) {
+        this.currentEdu = currentEdu;
+    }
 
     public String getSchool() {
         return school;

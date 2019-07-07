@@ -42,10 +42,10 @@ public class ExperienceService {
 
     }
 
-    public void deleteExperience(String pt_id, String username){
+    public Profile  deleteExperience(Long pt_id,  String username){
+        experienceRepository.deleteExperience(pt_id);
         User user = userRepository.findByUsername(username);
         Profile profile = profileRepository.findByUser(user);
-        Experience experience = experienceRepository.findByIdAndProfile(Long.valueOf(pt_id),profile);
-        experienceRepository.delete(experience);
+        return  profile;
     }
 }

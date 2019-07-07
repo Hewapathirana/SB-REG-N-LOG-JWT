@@ -1,15 +1,13 @@
 package com.reactLogin.login.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,6 +24,7 @@ public class Experience {
     private String from;
     @Column(name="endDate")
     private String to;
+    private Boolean currentJob;
     private String description;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -51,6 +50,14 @@ public class Experience {
 
     public String getTitle() {
         return title;
+    }
+
+    public Boolean getCurrentJob() {
+        return currentJob;
+    }
+
+    public void setCurrentJob(Boolean currentJob) {
+        this.currentJob = currentJob;
     }
 
     public void setTitle(String title) {

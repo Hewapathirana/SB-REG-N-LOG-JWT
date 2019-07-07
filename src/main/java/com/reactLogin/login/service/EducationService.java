@@ -38,5 +38,13 @@ public class EducationService {
         return educationRepository.save(education);
 
     }
+
+
+    public Profile  deleteEducation(Long pt_id,  String username){
+        educationRepository.deleteEducation(pt_id);
+        User user = userRepository.findByUsername(username);
+        Profile profile = profileRepository.findByUser(user);
+        return  profile;
+    }
 }
 
