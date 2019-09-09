@@ -69,9 +69,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.html",
                         "/**/*.css",
                         "/**/*.js"
+                       // "/api/profile/all"
                 ).permitAll()
                 .antMatchers(SIGN_UP_URLS).permitAll()
                 .antMatchers(H2_URL).permitAll()
+                //.antMatchers(guestURL).permitAll()
 //                .antMatchers(Swagger).permitAll()
                 .anyRequest().authenticated();
 

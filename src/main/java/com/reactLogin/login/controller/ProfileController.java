@@ -113,6 +113,10 @@ public class ProfileController {
     public ResponseEntity<?> getProfileByHandler(@PathVariable String handle){
 
         Profile profile = profileService.getProfile(handle);
+
+        if(profile==null){
+            return  new ResponseEntity<Profile>(profile, HttpStatus.NOT_FOUND);
+        }
         return  new ResponseEntity<Profile>(profile, HttpStatus.CREATED);
     }
 

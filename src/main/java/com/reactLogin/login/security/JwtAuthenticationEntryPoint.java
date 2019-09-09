@@ -1,8 +1,8 @@
 package com.reactLogin.login.security;
 
-import com.google.gson.Gson;
 import com.reactLogin.login.exceptions.InvalidLoginResponse;
 import org.springframework.security.core.AuthenticationException;
+import com.google.gson.Gson;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 

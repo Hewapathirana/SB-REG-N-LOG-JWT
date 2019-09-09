@@ -2,6 +2,7 @@ package com.reactLogin.login.security;
 
 public class SecurityConstants {
     public static final String SIGN_UP_URLS = "/api/users/**";
+    public static final String guestURL = "api/profile/**";
     public static final String H2_URL = "h2-console/**";
     public static final String Swagger = "/**";
     public static final String SECRET ="SecretKeyToGenJWTs";

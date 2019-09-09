@@ -3,10 +3,25 @@ package com.reactLogin.login.exceptions;
 public class InvalidLoginResponse {
     private String username;
     private String password;
+    private String status;
 
     public InvalidLoginResponse() {
+        this.status ="Unauthorized";
         this.username = "Invalid Username";
         this.password = "Invalid Password";
+
+    }
+
+
+
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getUsername() {
@@ -24,4 +39,11 @@ public class InvalidLoginResponse {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+
+
 }
+
+
+
